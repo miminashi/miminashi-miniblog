@@ -1,10 +1,13 @@
+require 'will_paginate'
+
 class PostsController < ApplicationController
   skip_before_filter :basic_authentication, :only => [:index, :show]
 
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.find(:all)
+    #@posts = Post.find(:all)
+    @posts = Post.paginate :page => params[:page], :per_page => 5, :order => 'created_at ASC'
 
     respond_to do |format|
       format.html # index.html.erb

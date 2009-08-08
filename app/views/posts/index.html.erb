@@ -1,4 +1,4 @@
-<h1>みにぶろぐ</h1>
+<h1><%= link_to 'みにぶろぐ', posts_path %></h1>
 <hr />
 
 <% for post in @posts %>
@@ -14,6 +14,10 @@
   <!-- <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %> -->
   <hr />
 <% end %>
+
+<%= will_paginate @posts %>
+
+<br />
 
 <%= link_to '管理ページ', :action => 'admin' %>
 
