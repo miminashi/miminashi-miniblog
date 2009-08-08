@@ -1,0 +1,15 @@
+<h1><%= link_to 'みにぶろぐ', posts_path %></h1>
+<hr />
+<h2><%=h @post.title %></h2>
+
+<%=h @post.body %>
+
+<br />
+<br />
+<%= link_to '編集', edit_post_path(@post) %>
+<hr />
+
+<% if false %>
+  <%= link_to '管理画面に戻る', :action => 'admin'%>
+<% end %>
+

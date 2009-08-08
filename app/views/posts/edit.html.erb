@@ -1,0 +1,20 @@
+<h1>記事を編集</h1>
+
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "確定" %>
+  </p>
+<% end %>
+
+<%= link_to '記事一覧に戻る', :action => 'list' %><!-- |
+<%= link_to 'ブログに戻る', posts_path %> -->

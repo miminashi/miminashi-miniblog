@@ -1,0 +1,33 @@
+<h1>記事一覧</h1>
+<!-- <%= link_to '新規投稿', new_post_path %> -->
+<hr />
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% for post in @posts %>
+
+  <tr>
+    <td><%=h post.title %></td>
+
+    <!-- <%=h post.body %> -->
+
+    <td><%= link_to '記事を表示', post %></td>
+    <td><%= link_to '編集', edit_post_path(post) %></td>
+    <td><%= link_to '削除', post, :confirm => '消すの?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+
+</table>
+
+<hr />
+
+<br />
+
+<%= link_to '管理画面に戻る', :action => 'admin' %>|
+<%= link_to '新規投稿', new_post_path %>
